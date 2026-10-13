@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu Nome — Edição de vídeo e motion design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1424; --surface:#182036; --line:#2a3450; --text:#f3f1ea; --muted:#a3abc2;
+  --yellow:#ffc93c; --lilac:#b9a6ff; --coral:#ff7a59; --ink:#0f1424;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){--bg:#f6f3ec;--surface:#ffffff;--line:#ddd7c9;--text:#1a2036;--muted:#5d6580;--ink:#1a2036;}
+}
+:root[data-theme="light"]{--bg:#f6f3ec;--surface:#ffffff;--line:#ddd7c9;--text:#1a2036;--muted:#5d6580;--ink:#1a2036;}
+:root[data-theme="dark"]{--bg:#0f1424;--surface:#182036;--line:#2a3450;--text:#f3f1ea;--muted:#a3abc2;--ink:#0f1424;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(24px,env(safe-area-inset-right,0px)) 0 max(24px,env(safe-area-inset-left,0px))}
+
+header.top{display:flex;justify-content:space-between;align-items:center;gap:8px 16px;flex-wrap:wrap;padding:22px 0}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;text-decoration:none}
+nav a{margin-left:22px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--text)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:36px 0 80px}
+.hero h1{font-size:clamp(40px,6.4vw,84px);font-weight:800;letter-spacing:-.025em}
+.hero h1 span{display:inline-block;font-variation-settings:"wdth" 100;animation:wgt 2.4s ease-in-out 1 both}
+@keyframes wgt{0%{font-weight:500;opacity:.2;transform:translateY(.25em)}60%{font-weight:800;opacity:1}100%{opacity:1;transform:none}}
+.hero p.lead{max-width:46ch;color:var(--muted);margin:24px 0 32px;font-size:19px}
+.btn{display:inline-block;background:var(--yellow);color:#1a1630;font-weight:500;padding:14px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font:500 17px "DM Sans",sans-serif}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.btn:hover{filter:brightness(1.08)}
+
+/* showreel card */
+.reel{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:pointer;padding:0;width:100%;display:block;color:inherit}
+.reel .stage{position:absolute;inset:0}
+.shape{position:absolute;border-radius:50%}
+.s1{width:46%;aspect-ratio:1;background:var(--lilac);left:8%;top:14%;animation:fl1 6s ease-in-out infinite}
+.s2{width:30%;aspect-ratio:1;background:var(--yellow);right:12%;bottom:10%;animation:fl2 6s ease-in-out infinite}
+.s3{width:22%;aspect-ratio:1;background:var(--coral);border-radius:22%;left:46%;top:18%;animation:fl3 6s ease-in-out infinite}
+@keyframes fl1{50%{transform:translate(60%,18%) scale(.7)}}
+@keyframes fl2{50%{transform:translate(-90%,-40%) scale(1.25)}}
+@keyframes fl3{0%,100%{transform:rotate(0)}50%{transform:translate(-120%,120%) rotate(180deg)}}
+.reel .play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--text);display:grid;place-items:center;transition:transform .25s}
+.reel:hover .play{transform:scale(1.12)}
+.play::after{content:"";border-left:22px solid var(--bg);border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+.tc{position:absolute;left:14px;bottom:12px;font:500 13px/1 "DM Sans",sans-serif;letter-spacing:.04em;background:rgba(15,20,36,.78);color:#f3f1ea;padding:6px 9px;border-radius:6px;font-variant-numeric:tabular-nums}
+
+/* trabalhos */
+section{padding:72px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.head h2{font-size:clamp(30px,4vw,48px);font-weight:800}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:transparent;color:var(--muted);padding:8px 16px;border-radius:999px;cursor:pointer;font:500 15px "DM Sans",sans-serif}
+.chip[aria-pressed="true"]{background:var(--lilac);border-color:var(--lilac);color:#1a1630}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:26px}
+.card{background:none;border:0;padding:0;text-align:left;color:inherit;cursor:pointer;font:inherit}
+.thumb{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb .art{position:absolute;inset:0;transition:transform .5s}
+.card:hover .art,.card:hover img{transform:scale(1.05)}
+.thumb img{transition:transform .5s}
+.card h3{font-size:21px;margin:14px 0 4px;font-weight:800}
+.card .meta{color:var(--muted);font-size:15px}
+.hidden{display:none}
+
+/* sobre */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;border-top:1px solid var(--line)}
+.about h2{font-size:clamp(30px,4vw,48px);font-weight:800}
+.about p{color:var(--muted);max-width:52ch}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.tools span{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:15px}
+.contact{border-top:1px solid var(--line);text-align:left}
+.contact a.big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(28px,5.4vw,68px);text-decoration:none;word-break:break-all;display:inline-block;margin:16px 0}
+.contact a.big:hover{color:var(--yellow)}
+footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
+
+/* modal */
+dialog{border:0;padding:0;background:transparent;max-width:min(1000px,94vw);width:100%;color:var(--text)}
+dialog::backdrop{background:rgba(5,8,16,.86)}
+.player{aspect-ratio:16/9;width:min(100%,calc((100dvh - 110px) * 16 / 9));margin:0 auto;background:#000;border-radius:12px;overflow:hidden}
+.player iframe{width:100%;height:100%;border:0;display:block}
+.mbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;margin-top:12px;color:#f3f1ea}
+.mbar a{color:var(--yellow)}
+.close{background:#f3f1ea;color:#1a1630;border:0;border-radius:999px;padding:11px 20px;cursor:pointer;font:500 15px "DM Sans",sans-serif}
+
+@media (max-width:820px){
+  .hero,.about{grid-template-columns:1fr;gap:32px}
+  nav a{margin-left:14px}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Seu Nome</a>
+    <nav><a href="#trabalhos">Trabalhos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1 id="titulo"></h1>
+        <p class="lead">Edito vídeos e animo motion graphics para marcas, canais e produtoras. Ritmo, clareza e movimento a serviço da história.</p>
+        <div class="ctas"><a class="btn" href="#trabalhos">Ver trabalhos</a><a class="btn ghost" href="#contato">Falar comigo</a></div>
+      </div>
+      <button class="reel" id="reelBtn" aria-label="Assistir ao showreel">
+        <div class="stage" aria-hidden="true"><div class="shape s1"></div><div class="shape s2"></div><div class="shape s3"></div></div>
+        <div class="play" aria-hidden="true"></div>
+        <div class="tc">SHOWREEL 2026 &nbsp;00:00:45</div>
+      </button>
+    </div>
+
+    <section id="trabalhos" style="padding-top:24px">
+      <div class="head">
+        <h2>Trabalhos</h2>
+        <div class="filters" id="filters" role="group" aria-label="Filtrar por categoria"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="about" id="sobre">
+      <h2>Como eu trabalho</h2>
+      <div>
+        <p>Escreva aqui duas ou três frases sobre seu estilo: como você pensa o corte, o que busca no movimento e que tipo de projeto você gosta de pegar. Fale com quem vai contratar, não sobre você em terceira pessoa.</p>
+        <div class="tools"><span>After Effects</span><span>Premiere Pro</span><span>DaVinci Resolve</span><span>Artlist</span></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <h2 style="font-size:clamp(30px,4vw,48px);font-weight:800">Tem um projeto?</h2>
+      <a class="big" href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a>
+      <p style="color:var(--muted);margin:0"><a href="https://instagram.com/" rel="noopener">Instagram</a> &nbsp; <a href="https://youtube.com/" rel="noopener">YouTube</a> &nbsp; <a href="https://linkedin.com/" rel="noopener">LinkedIn</a></p>
+    </section>
+  </main>
+  <footer>© 2026 Seu Nome</footer>
+</div>
+
+<dialog id="dlg" aria-label="Player de vídeo">
+  <div class="player" id="player"></div>
+  <div class="mbar"><span id="mtitle"></span><span><a id="ytlink" href="#" target="_blank" rel="noopener">Abrir no YouTube</a> &nbsp; <button class="close" id="closeBtn">Fechar</button></span></div>
+</dialog>
+
+<script>
+/* ====== EDITE AQUI ======
+   Cole o link do YouTube de cada trabalho em "url". */
+const SHOWREEL = "https://www.youtube.com/watch?v=COLE_O_ID_DO_SHOWREEL";
+const PROJECTS = [
+  {title:"Vinheta de abertura — Canal Exemplo", cat:"Motion", role:"Animação e design", tools:"After Effects", dur:"0:12", url:"https://www.youtube.com/watch?v=COLE_O_ID_1", hue:260},
+  {title:"Comercial 30s — Marca X", cat:"Edição", role:"Edição e color", tools:"Premiere Pro", dur:"0:30", url:"https://www.youtube.com/watch?v=COLE_O_ID_2", hue:40},
+  {title:"Explainer — Produto Y", cat:"Motion", role:"Roteiro visual e animação", tools:"After Effects", dur:"1:20", url:"https://www.youtube.com/watch?v=COLE_O_ID_3", hue:12},
+  {title:"Documentário curto — Pessoas", cat:"Edição", role:"Edição e som", tools:"DaVinci Resolve", dur:"4:05", url:"https://www.youtube.com/watch?v=COLE_O_ID_4", hue:200},
+  {title:"Reels para campanha", cat:"Social", role:"Edição vertical e legendas", tools:"Premiere Pro", dur:"0:20", url:"https://www.youtube.com/watch?v=COLE_O_ID_5", hue:320},
+  {title:"Lançamento com imagens de IA", cat:"Social", role:"Direção e pós-produção", tools:"Artlist, After Effects", dur:"0:45", url:"https://www.youtube.com/watch?v=COLE_O_ID_6", hue:150}
+];
+/* ======================== */
+
+const $ = s => document.querySelector(s);
+function ytId(u){
+  try{
+    const x = new URL(u);
+    if(x.hostname.includes("youtu.be")) return x.pathname.slice(1);
+    if(x.pathname.startsWith("/shorts/")||x.pathname.startsWith("/embed/")) return x.pathname.split("/")[2];
+    return x.searchParams.get("v");
+  }catch(e){return null}
+}
+
+// título com entrada animada, palavra por palavra
+const words = "Edição e motion que dão ritmo à história".split(" ");
+$("#titulo").innerHTML = words.map((w,i)=>`<span style="animation-delay:${i*0.12}s">${w}</span>`).join(" ");
+
+// grid
+const grid = $("#grid");
+function artFor(h){
+  return `<div class="art" style="background:linear-gradient(135deg,hsl(${h} 70% 62%),hsl(${(h+50)%360} 75% 45%))">
+  <div class="shape" style="width:38%;aspect-ratio:1;left:10%;top:18%;background:hsl(${(h+160)%360} 85% 70%);opacity:.9"></div>
+  <div class="shape" style="width:24%;aspect-ratio:1;right:14%;bottom:14%;background:#ffc93c;border-radius:24%"></div></div>`;
+}
+PROJECTS.forEach((p,i)=>{
+  const id = ytId(p.url);
+  const b = document.createElement("button");
+  b.className="card"; b.dataset.cat=p.cat;
+  b.innerHTML = `<div class="thumb">${artFor(p.hue)}${id?`<img alt="" loading="lazy" src="https://img.youtube.com/vi/${id}/hqdefault.jpg">`:""}<span class="tc">${p.dur}</span></div>
+  <h3>${p.title}</h3><div class="meta">${p.role} · ${p.tools}</div>`;
+  const img = b.querySelector("img"); if(img) img.onerror = ()=>img.remove();
+  b.onclick = ()=>openVideo(p.url,p.title);
+  grid.appendChild(b);
+});
+
+// filtros
+const cats = ["Todos",...new Set(PROJECTS.map(p=>p.cat))];
+const fbox = $("#filters");
+cats.forEach((c,i)=>{
+  const b=document.createElement("button");
+  b.className="chip"; b.textContent=c; b.setAttribute("aria-pressed",i===0);
+  b.onclick=()=>{
+    fbox.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    grid.querySelectorAll(".card").forEach(card=>card.classList.toggle("hidden",c!=="Todos"&&card.dataset.cat!==c));
+  };
+  fbox.appendChild(b);
+});
+
+// modal de vídeo
+const dlg=$("#dlg");
+function openVideo(url,title){
+  const id=ytId(url);
+  $("#player").innerHTML = id?`<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="${title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`:"";
+  $("#mtitle").textContent=title; $("#ytlink").href=url;
+  dlg.showModal();
+}
+function closeVideo(){ $("#player").innerHTML=""; dlg.close(); }
+$("#closeBtn").onclick=closeVideo;
+dlg.addEventListener("click",e=>{ if(e.target===dlg) closeVideo(); });
+dlg.addEventListener("close",()=>{ $("#player").innerHTML=""; });
+$("#reelBtn").onclick=()=>openVideo(SHOWREEL,"Showreel 2026");
+</script>
+</body>
+</html>
